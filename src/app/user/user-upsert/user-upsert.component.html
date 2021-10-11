@@ -1,0 +1,50 @@
+<section class="{{case}}">
+
+  <div class="{{case}}-content">
+
+    <div class="{{case}}-title">
+      <h2>Cadastre ou atualize um usuário</h2>
+    </div>
+
+    <div>
+      <form class="{{case}}-form">
+        <mat-form-field >
+          <mat-label>Nome</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <mat-form-field >
+          <mat-label>E-mail</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <mat-form-field >
+          <mat-label>Senha</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field >
+          <mat-label>Descrição</mat-label>
+          <textarea matInput type="text"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Selecione o tipo de usuário</mat-label>
+          <mat-select value="editor">
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="editor">Editor</mat-option>
+            <mat-option value="leitor">Leitor</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button class="{{case}}-button">Atualizar</button>
+
+
+      </form>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+
+  poc-front:
+    container_name: poc-front
+    networks:
+      - api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - '4200:4200'
+
+
+networks:
+  api:
+    name: poc-front
+    driver: bridge
