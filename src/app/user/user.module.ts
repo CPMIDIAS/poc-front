@@ -6,6 +6,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
@@ -24,3 +28,10 @@ import {MatIconModule} from '@angular/material/icon';
   bootstrap: []
 })
 export class UserModule {}
+
+export interface User{
+  name: string;
+  email: string;
+  description: string;
+  roles: string;
+}

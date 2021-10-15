@@ -10,12 +10,12 @@
       <form class="{{case}}-form">
         <mat-form-field >
           <mat-label>Nome</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
 
         <mat-form-field >
           <mat-label>E-mail</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
 
         <mat-form-field >
@@ -28,19 +28,19 @@
 
         <mat-form-field >
           <mat-label>Descrição</mat-label>
-          <textarea matInput type="text"></textarea>
+          <textarea matInput type="text" [(ngModel)]="user.description" [ngModelOptions]="{standalone: true}"></textarea>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Selecione o tipo de usuário</mat-label>
-          <mat-select value="editor">
+          <mat-select value="editor" [(ngModel)]="user.roles" [ngModelOptions]="{name: 'editor', standalone: true}">
             <mat-option value="admin">Admin</mat-option>
             <mat-option value="editor">Editor</mat-option>
             <mat-option value="leitor">Leitor</mat-option>
           </mat-select>
         </mat-form-field>
 
-        <button mat-raised-button class="{{case}}-button">Atualizar</button>
+        <button mat-raised-button (click)="createUser()" class="{{case}}-button">Atualizar</button>
 
 
       </form>
