@@ -1,0 +1,15 @@
+.home-noticias {
+  display: inline-flexbox;
+  width: 40%;
+  margin: 2em 0em;
+  padding: 1em 15em;
+  h2{
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1024px){
+  .home-noticias{
+    width: auto;
+    padding: 1em 1em;
+  }
+}

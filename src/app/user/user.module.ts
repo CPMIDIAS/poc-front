@@ -1,4 +1,4 @@
-import { userUpsert } from './user-upsert/user-upsert.module';
+import { UserUpsertComponent } from './user-upsert/user-upsert.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from "@angular/core";
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
@@ -11,7 +11,7 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 
 
 @NgModule({
-  declarations: [userUpsert],
+  declarations: [UserUpsertComponent],
   imports:[
     BrowserModule,
     MatFormFieldModule,
@@ -28,10 +28,3 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
   bootstrap: []
 })
 export class UserModule {}
-
-export interface User{
-  name: string;
-  email: string;
-  description: string;
-  roles: string;
-}

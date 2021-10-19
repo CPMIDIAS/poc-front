@@ -1,0 +1,16 @@
+<main class="{{case}}-noticias">
+  <div>
+    <h2>Noticias</h2>
+  </div>
+  <article *ngFor="let item of list">
+    <mat-card class="{{case}}-card">
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-subtitle>{{item.subtitle}}</mat-card-subtitle>
+      <mat-card-content>
+        <p>{{item.content}}</p>
+      </mat-card-content>
+    </mat-card>
+    <br>
+  </article>
+</main>
+
